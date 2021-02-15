@@ -1,11 +1,30 @@
 body {
-  margin: 0;
   background: black;
-  color: white;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: white;
+}
+
+am-preloader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px) grayscale(100);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background: url(https://astrit.co/gallery/images/am/am_70.jpg) no-repeat
+    center/cover;
 }
 
 am-logo {
@@ -15,16 +34,16 @@ am-logo {
 }
 
 am-stripe {
-  position: absolute;
   width: 8px;
   height: 100%;
   background: currentColor;
-  animation: am 1.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite
+  position: absolute;
+  animation: am 1.8s cubic-bezier(0.4, -0.29, 0.19, 1.23) infinite
     alternate-reverse both;
 }
 
 am-stripe:nth-child(1) {
-  transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
 }
 am-stripe:nth-child(2) {
   transform: translate3d(16px, 0, 0);
@@ -44,7 +63,7 @@ am-stripe:nth-child(5) {
 }
 am-stripe:nth-child(6) {
   transform: translate3d(80px, 0, 0);
-  animation-delay: 0.5s;
+  animation-delay: 0.6s;
 }
 
 @keyframes am {
