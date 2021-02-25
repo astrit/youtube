@@ -1,100 +1,46 @@
-body {
-  background-color: black;
-  margin: 0;
-  scroll-behavior: smooth;
-  font-family: sans-serif;
-  letter-spacing: -0.1ch;
-  line-height: 1.38ex;
-  overflow: overlay;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body::-webkit-scrollbar {
-  width: 60px;
-  height: 100%;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, white 8px, black 0) repeat-y center
-    center/100% 16px;
-  box-shadow: none;
-  border-right: 25px solid transparent;
-  height: 95px;
-  min-height: 95px;
-  max-height: 95px;
-  cursor: pointer;
-}
-
-[hidden] {
-  display: none;
-}
-
-section {
-  min-height: 40vh;
-  background: gray;
-}
-
-zac-zac {
-  background: white;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
-zac-pro {
+css-bg {
   background: white;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 600px;
-  min-height: 100%;
-  padding-top: 20vh;
-  padding-bottom: 20vh;
-  margin: 0 auto;
-}
-
-zac-pro img {
-  width: 600px;
-  height: auto;
-  transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-zac-case {
-  z-index: 1;
-  position: sticky;
-  top: 30vh;
-  margin-bottom: 30vh;
-}
-
-zac-inside {
-  position: sticky;
-  top: 20vh;
-}
-
-zac-inside {
-  margin-bottom: 25vh;
-}
-
-zac-intro {
-  position: sticky;
-  margin-bottom: 20vh;
-  font-size: 6vw;
-  font-weight: bold;
-  top: 30vh;
-  display: flex;
-  /* bottom: 60vh; */
-  margin-bottom: 40vh;
-  width: 100%;
-  line-height: 1;
   justify-content: center;
 }
+
+css-pro {
+  --base: 24vmin;
+  background: white;
+  display: grid;
+  width: calc(var(--base) * 3);
+  padding-bottom: calc(var(--base) * 2);
+  grid-gap: var(--base);
+}
+
+css-pro img {
+  width: 100%;
+}
+
+css-title {
+  font-size: calc(var(--base) / 2);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--base) * 2);
+  position: sticky;
+  top: var(--base);
+}
+
+css-case {
+  position: sticky;
+  top: var(--base);
+  z-index: 1;
+}
+
+css-inside {
+  position: sticky;
+  top: calc(var(--base) - 8vmin);
+  margin-bottom: -6vmin;
+}
+
+/* Stripes  */
 
 zac-stripes {
   display: flex;
@@ -253,6 +199,8 @@ zac-stripe:nth-child(3)::before {
     clip-path: polygon(0 0, 0 0, 0 0, 0 0);
   }
 }
+
+/* frost section  */
 
 front-cta {
   width: 100%;
@@ -456,3 +404,7 @@ figure::after {
   mix-blend-mode: overlay;
   pointer-events: none;
 }
+
+/* * {
+  box-shadow: 0 0 0 1px red !important;
+} */
