@@ -1,11 +1,34 @@
+:root {
+  --base: 20vmin;
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --gradient: linear-gradient(-45deg, #ffa63d, #ff3d77, #b933f9, #5f19dd);
+}
+
 css-bg {
   background: white;
   display: flex;
   justify-content: center;
 }
 
+/* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */
+
+/* will-change on th gallery section */
+/* will-change on th gallery section */
+/* will-change on th gallery section */
+/* will-change on th gallery section */
+/* will-change on th gallery section */
+/* will-change on th gallery section */
+
 css-pro {
-  --base: 24vmin;
   background: white;
   display: grid;
   width: calc(var(--base) * 3);
@@ -42,162 +65,110 @@ css-inside {
 
 /* Stripes  */
 
-zac-stripes {
-  display: flex;
-  justify-content: space-between;
-  padding: 20vw 5vw;
-  width: 1100px;
+css-stripes {
+  --base: 24vmin;
+  --width: calc(var(--base) * 4);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin: 0 auto;
-  scroll-snap-type: y mandatory;
-  scroll-snap-points-y: repeat(300px);
+  width: var(--width);
+  height: 200vh;
+  padding-top: var(--base);
 }
 
-zac-stripe {
-  width: calc(100% / 3);
-  height: 90vh;
-  position: sticky;
-  background: url(/EP:02/img/stripe-portrait.jpeg) no-repeat fixed center/1100px;
-  transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-sizing: border-box;
-  scroll-snap-align: start;
+css-stripe {
+  background: url(img/stripe-portrait.jpeg) no-repeat fixed center/var(--width);
   transform: scale(0.9) skewX(-10deg);
-  mix-blend-mode: color;
-}
-
-zac-stripe::before {
-  content: attr(data-nr);
-  display: flex;
-  font-size: 180px;
-  line-height: 1;
-  color: white;
   position: sticky;
-  top: 20%;
-  font-weight: bold;
-  mix-blend-mode: color-dodge;
-  margin-top: -200px;
-  width: 100%;
-  justify-content: center;
-  transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  z-index: 2;
-  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #b933f9, #5f19dd);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(0, 0, 0, 0);
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat;
-  background-attachment: fixed;
-  transform: skewX(10deg);
+  height: calc(var(--base) * 5);
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-zac-stripe::after {
-  content: "";
-  width: 100%;
-  height: 60%;
-  background: red;
-  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #b933f9, #5f19dd);
-  mix-blend-mode: color-dodge;
-  background-attachment: fixed;
-  background-size: 200%;
-  display: flex;
-  position: sticky;
-  top: 10%;
-  left: 0;
-  margin-top: 60vh;
-  margin-left: 0px;
-  animation-duration: 4s;
-  animation-timing-function: cubic-bezier(1, -0.58, 0, 1.86);
-  animation-iteration-count: infinite;
-  animation-fill-mode: backwards;
-  animation-name: glitch;
+css-stripe:hover {
+  transform: scale(1) skewX(-10deg);
+  background-position: center -20px;
 }
 
-zac-stripe:nth-child(2)::after {
-  animation-delay: 0.1s;
-  animation-direction: alternate-reverse;
+css-stripe:hover::before {
+  transform: skewX(10deg) translate(0.5ch, -0.5ch);
 }
 
-zac-stripe:nth-child(3)::after {
-  animation-delay: 0.7s;
-  animation-direction: alternate-reverse;
-}
-
-zac-stripe:nth-child(1) {
+[col1] {
   top: 30vh;
   margin-top: 15vh;
   margin-bottom: 40vh;
 }
 
-zac-stripe:nth-child(2) {
-  top: 50vh;
+[col2] {
+  top: 40vh;
   margin-top: 5vh;
   margin-bottom: 30vh;
 }
-zac-stripe:nth-child(3) {
-  top: 20vh;
+
+[col3] {
+  top: 25vh;
   margin-top: 10vh;
   margin-bottom: 20vh;
 }
 
-zac-stripe:nth-child(1)::before {
-  top: 30vh;
-  margin-bottom: -30vh;
-}
-zac-stripe:nth-child(2)::before {
-  top: 10vh;
-  margin-bottom: -20vh;
-}
-zac-stripe:nth-child(3)::before {
-  top: 20vh;
-  margin-bottom: -40vh;
+[col1]::before {
+  top: 35vh;
 }
 
-@keyframes glitch {
-  0% {
-    opacity: 1;
-    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
-  }
-  2% {
-    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
-  }
-  4% {
-    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
-  }
-  6% {
-    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
-  }
-  8% {
-    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
-  }
-  10% {
-    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
-  }
-  12% {
-    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
-  }
-  14% {
-    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
-  }
-  16% {
-    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
-  }
-  18% {
-    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
-  }
-  20% {
-    clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
-  }
-  21.9% {
-    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
-  }
-  28% {
-    opacity: 1;
-  }
-  82%,
-  100% {
-    opacity: 0;
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-  }
+[col2]::before {
+  top: 45vh;
+}
+
+[col3]::before {
+  top: 35vh;
+}
+
+css-stripe::before {
+  content: attr(data-title);
+  display: flex;
+  font-size: calc(var(--base) / 2);
+  font-weight: bold;
+  color: white;
+  background-clip: text;
+  margin-bottom: -30vh;
+  position: sticky;
+  transform: skewX(10deg) translate(0.5ch, -2ch);
+  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  background: var(--gradient) no-repeat fixed center/cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  mix-blend-mode: color-dodge;
+}
+
+css-stripe::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--gradient) no-repeat center/200%;
+  mix-blend-mode: color-dodge;
+  display: flex;
+  position: relative;
+  animation: glitch 4s cubic-bezier(1, -0.58, 0, 1.86) infinite backwards;
+  top: 20%;
+  transform: scaleX(10deg);
+}
+
+[col2]::after {
+  animation-delay: 0.1s;
+  animation-direction: alternate-reverse;
+}
+
+[col3]::after {
+  animation-delay: 0.7s;
+}
+
+css-stripe:hover::after {
+  animation-play-state: paused;
 }
 
 /* frost section  */

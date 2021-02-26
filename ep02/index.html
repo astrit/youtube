@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <base href="ep02" />
   </head>
   <body>
     <main>
@@ -15,18 +16,19 @@
         <css-pro>
           <css-title> CSS Pro </css-title>
           <css-case>
-            <img src="/EP:02/img/mac-pro-case.jpg" alt="Case" />
+            <img src="img/mac-pro-case.jpg" alt="Case" />
           </css-case>
           <css-inside>
-            <img src="/EP:02/img/mac-pro-inside.png" alt="Case" />
+            <img src="img/mac-pro-inside.png" alt="Case" />
           </css-inside>
         </css-pro>
       </css-bg>
-      <zac-stripes>
-        <zac-stripe data-nr="css"></zac-stripe>
-        <zac-stripe data-nr="is"></zac-stripe>
-        <zac-stripe data-nr="art"></zac-stripe>
-      </zac-stripes>
+
+      <css-stripes>
+        <css-stripe col1 data-title="css"></css-stripe>
+        <css-stripe col2 data-title="is"></css-stripe>
+        <css-stripe col3 data-title="art"></css-stripe>
+      </css-stripes>
       <front-cta hidden>
         <frost-text>B R A V E</frost-text>
         <frost-bg></frost-bg>
@@ -59,7 +61,7 @@
           ></iframe>
         </figure>
       </stick-gallery>
-      <stick-list hidden>
+      <stick-list>
         <stick-item>
           <stick-letter>01</stick-letter>
           <stick-content>
@@ -181,7 +183,9 @@
           </stick-content>
         </stick-item>
       </stick-list>
-      <horizontal-stick> this is going to be horizontal </horizontal-stick>
+      <horizontal-stick hidden>
+        this is going to be horizontal
+      </horizontal-stick>
     </main>
   </body>
 </html>
