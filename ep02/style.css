@@ -242,6 +242,8 @@ frost-bg {
   filter: blur(20px);
 }
 
+/* list */
+
 stick-list {
   display: flex;
   width: 100%;
