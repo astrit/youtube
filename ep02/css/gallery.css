@@ -32,21 +32,6 @@ gallery-item {
   margin-bottom: 10vh;
 }
 
-gallery-close {
-  width: 200px;
-  height: 200px;
-  background: red;
-  position: fixed;
-  transition: var(--transition);
-  top: 10vh;
-  z-index: 100;
-  opacity: 0;
-  transform: translateY(1ch);
-}
-gallery-item:hover ~ gallery-close {
-  opacity: 1;
-  transform: translateY(0);
-}
 gallery-item > * {
   outline: none;
   aspect-ratio: 1 / 1;
@@ -109,7 +94,8 @@ gallery-item:after {
   position: sticky;
   top: var(--nr-top);
   /* margin-bottom: 10ch; */
-  margin-top: 4ch;
+  margin-top: 5vh;
+  margin-bottom: 20vh;
   counter-increment: gallery;
   font-weight: bold;
   transform: rotate(calc(var(--rotate) * -1)) scale(2);
