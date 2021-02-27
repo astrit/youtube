@@ -2,6 +2,28 @@
   --base: 20vmin;
   --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --gradient: linear-gradient(-45deg, #ffa63d, #ff3d77, #b933f9, #5f19dd);
+  --gradient-alternate: linear-gradient(
+    to bottom,
+    #ffa63d,
+    #ff3d77,
+    #b933f9,
+    #5f19dd,
+    rgb(98 212 33 / 0%) 100%
+  );
+  --cursor-hover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='black'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E")
+      20 0,
+    auto;
+  --cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E")
+      20 0,
+    auto;
+}
+
+body {
+  cursor: var(--cursor);
+}
+
+.cursor:hover {
+  cursor: var(--cursor-hover);
 }
 
 css-bg {
@@ -172,75 +194,77 @@ css-stripe:hover::after {
 }
 
 /* frost section  */
+/* frost section  */
+/* frost section  */
+/* frost section  */
+/* frost section  */
 
-front-cta {
-  width: 100%;
+/* aspect-ratio: 16 / 9;
+display: grid;
+grid-template-areas: "center";
+place-items: center; */
+
+css-mix {
+  --mix-height: calc(var(--base) * 20);
   background-color: black;
-  display: flex;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  height: 350vh;
-  --area: 100vh;
-  --object: 100vh;
-  font-size: 200px;
-
-  --text-height: 15vh;
-  --text-margin: 42vh;
-  --text-top: 42vh;
+  display: grid;
+  grid-template-areas: "center";
+  /* height: 400vh; */
+  height: var(--mix-height);
+  width: 100%;
+  justify-content: center;
+  place-items: flex-start;
+  font-size: var(--base);
+  aspect-ratio: 16 / 9;
 }
 
-frost-text {
-  color: #6b76ff2e;
-  z-index: 0;
-  height: 100%;
-  position: sticky;
-  top: var(--text-top);
-  height: var(--text-height);
-  box-sizing: border-box;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  margin-bottom: var(--text-margin);
-  font-weight: 900;
-  background-image: linear-gradient(
-    to bottom,
-    #ffa63d,
-    #ff3d77,
-    #b933f9,
-    #5f19dd,
-    rgb(98 212 33 / 0%) 100%
-  );
+mix-text {
+  grid-area: center;
+  font-weight: bold;
+  color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(0, 0, 0, 0);
-  background-size: 200px;
-  background-position: bottom center;
-  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  background-image: var(--gradient-alternate);
   background-attachment: fixed;
+  aspect-ratio: 16 / 9;
+  position: sticky;
+  top: var(--base);
+  display: grid;
+  place-content: center;
+  z-index: 0;
 }
 
-frost-bg {
-  --gloss-width: 2ch;
-  display: flex;
-  width: var(--gloss-width);
+mix-bg {
+  grid-area: center;
+  width: var(--base);
   height: 100%;
-  position: sticky;
-  z-index: 1;
-  transform: skewX(-30deg) translate(-3ch, calc(-4 * var(--text-height)));
+  flex: 1;
+  justify-self: center;
+  transform: rotate(30deg) translateX(-1ch);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  top: 0;
+  filter: blur(10px);
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0),
-    black 50%,
-    rgba(0, 0, 0, 0)
+    transparent,
+    black,
+    black,
+    transparent,
+    black,
+    transparent,
+    white,
+    white,
+    transparent,
+    black,
+    transparent
   );
-  mix-blend-mode: overlay;
-  box-shadow: 10vw 0 50px 0 black, -10vw 0 50px 0 white, 20vw 0 0 -10px white;
-  filter: blur(20px);
 }
+
+/* frost section  */
+/* frost section  */
+/* frost section  */
 
 /* list */
 
@@ -337,6 +361,8 @@ figure {
   overflow: hidden;
   /* transform: scale(0.6) rotate3d(160, 90, 20, 40deg); */
   background-color: white;
+  transition: var(--transition);
+  will-change: transform;
 }
 
 figure:nth-child(1) {
@@ -351,7 +377,9 @@ figure:nth-child(3) {
 figure:nth-child(4) {
   transform: scale(0.6) rotate(-16deg);
 }
-
+figure:hover {
+  transform: scale(0.8) rotate(0);
+}
 figure img,
 figure video,
 figure iframe {
