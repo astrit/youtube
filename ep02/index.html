@@ -5,15 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="vars.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <base href="ep02" />
   </head>
   <body>
     <main>
       <header hidden>test</header>
-
-      <bg-white>
+      <bg-white hidden>
         <css-pro>
           <css-title> Mac Pro </css-title>
           <css-case cursor>
@@ -24,44 +22,68 @@
           </css-inside>
         </css-pro>
       </bg-white>
-      <bg-black>
+      <bg-black hidden>
         <css-stripes>
           <css-stripe cursor col1 data-title="css"></css-stripe>
           <css-stripe cursor col2 data-title="is"></css-stripe>
           <css-stripe cursor col3 data-title="epic"></css-stripe>
         </css-stripes>
       </bg-black>
-      <css-mix>
+      <css-mix hidden>
         <mix-text>sub●scrb</mix-text>
         <mix-bg></mix-bg>
       </css-mix>
 
-      <stick-gallery>
+      <css-gallery>
+        <gallery-item cursor g1><img src="img/gallery-1.jpeg" /></gallery-item>
+        <gallery-item cursor g2>
+          <img src="img/smoke.jpeg" />
+        </gallery-item>
+        <gallery-item cursor g3>
+          <iframe src="https://trekend.com/" frameborder="0"></iframe>
+        </gallery-item>
+        <gallery-item cursor g4>
+          <video paused muted loop controls poster="img/sam.jpg">
+            <source src="img/video.mp4" type="video/mp4" />
+          </video>
+        </gallery-item>
+      </css-gallery>
+
+      <stick-gallery hidden>
+        <nav>this is the nav</nav>
         <figure>
-          <img src="img/gallery-1.jpeg" width="1000" height="1000" />
+          <img src="img/gallery-1.jpeg" />
         </figure>
         <figure>
           <img
-            src="https://astrit.co/gallery/images/am/am_50.jpg"
+            src="https://images.unsplash.com/photo-1529946825183-536c6317f60e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
             width="1000"
             height="1000"
           />
         </figure>
         <figure>
-          <video width="1000" height="1000" autoplay muted loop controls>
+          <iframe
+            src="https://css.gg/app"
+            width="1000"
+            height="1000"
+            frameborder="0"
+          ></iframe>
+        </figure>
+        <figure>
+          <video
+            width="1000"
+            height="1000"
+            paused
+            muted
+            loop
+            controls
+            poster="img/sam.jpg"
+          >
             <source
               src="https://sso.trekend.com/video/bg.mp4"
               type="video/mp4"
             />
           </video>
-        </figure>
-        <figure>
-          <iframe
-            src="https://drive.trekend.com"
-            width="1000"
-            height="1000"
-            frameborder="0"
-          ></iframe>
         </figure>
       </stick-gallery>
       <stick-list>

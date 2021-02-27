@@ -1,0 +1,75 @@
+css-mix {
+  --mix-height: calc(var(--base) * 30);
+  background-color: black;
+  display: grid;
+  grid-template-areas: "center";
+  /* height: 400vh; */
+  height: var(--mix-height);
+  width: 100%;
+  justify-content: center;
+  place-items: flex-start;
+  font-size: var(--base);
+  aspect-ratio: 16 / 9;
+  background: url(../img/sam.jpg) no-repeat fixed center/cover;
+  position: relative;
+  mix-blend-mode: hard-light;
+}
+
+css-mix::before {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, black, transparent, black 30%) no-repeat
+    center/cover;
+  object-fit: cover;
+}
+
+mix-text {
+  grid-area: center;
+  font-weight: bold;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: var(--gradient-alternate);
+  background-attachment: fixed;
+  aspect-ratio: 16 / 9;
+  position: sticky;
+  top: var(--base);
+  display: grid;
+  place-content: center;
+  z-index: 0;
+  margin-bottom: var(--base);
+  mix-blend-mode: hard-light;
+}
+
+mix-bg {
+  grid-area: center;
+  width: var(--base);
+  height: 100%;
+  flex: 1;
+  justify-self: center;
+  transform: rotate(30deg) translateX(-1ch);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  top: 0;
+  filter: blur(20px);
+  background: linear-gradient(
+    to right,
+    transparent,
+    black,
+    black,
+    transparent,
+    black,
+    transparent,
+    white,
+    white,
+    transparent,
+    black,
+    transparent
+  );
+}

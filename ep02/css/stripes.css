@@ -1,0 +1,105 @@
+css-stripes {
+  --base: 24vmin;
+  --width: calc(var(--base) * 4);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  width: var(--width);
+  height: 200vh;
+  padding-top: var(--base);
+}
+
+css-stripe {
+  background: url(../img/stripe-portrait.jpeg) no-repeat fixed
+    center/var(--width);
+  transform: scale(0.9) skewX(-10deg);
+  position: sticky;
+  height: calc(var(--base) * 5);
+  transition: var(--transition);
+}
+
+css-stripe:hover {
+  transform: scale(1) skewX(-10deg);
+  background-position: center -20px;
+}
+
+css-stripe:hover::before {
+  transform: skewX(10deg) translate(0.5ch, -0.5ch);
+}
+
+[col1] {
+  top: 30vh;
+  margin-top: 15vh;
+  margin-bottom: 40vh;
+}
+
+[col2] {
+  top: 40vh;
+  margin-top: 5vh;
+  margin-bottom: 30vh;
+}
+
+[col3] {
+  top: 25vh;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
+}
+
+[col1]::before {
+  top: 35vh;
+}
+
+[col2]::before {
+  top: 45vh;
+}
+
+[col3]::before {
+  top: 35vh;
+}
+
+css-stripe::before {
+  content: attr(data-title);
+  display: flex;
+  font-size: calc(var(--base) / 2);
+  font-weight: bold;
+  color: white;
+  background-clip: text;
+  margin-bottom: -30vh;
+  position: sticky;
+  transform: skewX(10deg) translate(0.5ch, -2ch);
+  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  background: var(--gradient) no-repeat fixed center/cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  mix-blend-mode: color-dodge;
+}
+
+css-stripe::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--gradient) no-repeat center/200%;
+  mix-blend-mode: color-dodge;
+  display: flex;
+  position: relative;
+  animation: glitch 4s cubic-bezier(1, -0.58, 0, 1.86) infinite backwards;
+  top: 20%;
+  transform: scaleX(10deg);
+}
+
+[col2]::after {
+  animation-delay: 0.1s;
+  animation-direction: alternate-reverse;
+}
+
+[col3]::after {
+  animation-delay: 0.7s;
+}
+
+css-stripe:hover::after {
+  animation-play-state: paused;
+}

@@ -1,0 +1,27 @@
+@import "vars.css";
+@import "mac.css";
+@import "stripes.css";
+@import "mix.css";
+@import "gallery.css";
+@import "list.css";
+
+/* aspect-ratio: 16 / 9; */ /* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */ /* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */ /* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */ /* aspect-ratio: 16 / 9; */
+/* aspect-ratio: 16 / 9; */ /* aspect-ratio: 16 / 9; */
+
+header {
+  display: flex;
+  font-size: 20px;
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  z-index: 14;
+  top: 0;
+  backdrop-filter: blur(40px);
+}
+
+/* * {
+  box-shadow: 0 0 0 1px red !important;
+} */

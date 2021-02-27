@@ -1,0 +1,35 @@
+css-pro {
+  background: white;
+  display: grid;
+  width: calc(var(--base) * 3);
+  padding-bottom: calc(var(--base) * 2);
+  grid-gap: var(--base);
+  margin: 0 auto;
+}
+
+css-pro img {
+  width: 100%;
+}
+
+css-title {
+  font-size: calc(var(--base) / 2);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--base) * 2);
+  position: sticky;
+  top: var(--base);
+}
+
+css-case {
+  position: sticky;
+  top: var(--base);
+  z-index: 1;
+}
+
+css-inside {
+  position: sticky;
+  top: calc(var(--base) - 8vmin);
+  margin-bottom: -6vmin;
+}

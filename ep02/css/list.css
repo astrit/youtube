@@ -1,0 +1,47 @@
+stick-list {
+  display: flex;
+  width: 100%;
+  color: white;
+  /* background: black; */
+  backdrop-filter: blur(20px);
+  flex-direction: column;
+  line-height: 1.38;
+  position: relative;
+}
+
+stick-letter {
+  font-weight: bold;
+  font-size: 10vw;
+  position: sticky;
+  top: 5vw;
+  height: min-content;
+  margin-right: 5vw;
+}
+
+stick-item {
+  max-width: 1100px;
+  margin: 5vw auto;
+  display: flex;
+}
+
+stick-content {
+  display: flex;
+  flex-direction: column;
+}
+
+stick-title {
+  font-weight: bold;
+  font-size: 10vw;
+}
+
+stick-text {
+  font-size: 2vw;
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #b933f9, #5f19dd);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
