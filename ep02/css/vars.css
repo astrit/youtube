@@ -1,6 +1,7 @@
 :root {
   --base: 20vmin;
-  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+  /* --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
   --gradient: linear-gradient(-45deg, #ffa63d, #ff3d77, #b933f9, #5f19dd);
   --gradient-alternate: linear-gradient(
     to bottom,
@@ -35,6 +36,7 @@ body {
   letter-spacing: -0.1ch;
   line-height: 1;
   overflow: overlay;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -42,6 +44,7 @@ html {
 }
 
 body::-webkit-scrollbar-track {
+  pointer-events: none;
   background: linear-gradient(
       to bottom,
       transparent,
