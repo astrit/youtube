@@ -41,6 +41,15 @@ html {
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar-track {
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.1) 1px
+    )
+    no-repeat center / 1px 90%;
+}
+
 body::-webkit-scrollbar {
   width: 100px;
   height: 100%;
@@ -48,14 +57,25 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   background: radial-gradient(
-      farthest-side,
-      transparent calc(90% - 6px),
-      var(--scroll-negative),
-      transparent,
-      var(--scroll-positive),
-      transparent
-    )
-    no-repeat center / 20px 20px;
+        farthest-side,
+        transparent calc(90% - 6px),
+        var(--scroll-negative),
+        transparent,
+        var(--scroll-positive),
+        transparent
+      )
+      no-repeat center / 20px 20px,
+    linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1) 4px)
+      no-repeat center / 4px 90%,
+    radial-gradient(
+        farthest-side,
+        transparent calc(90% - 2px),
+        rgba(255, 255, 255, 0.1),
+        transparent
+      )
+      no-repeat center/40px 40px,
+    radial-gradient(farthest-side, white calc(90% - 2px), transparent) no-repeat
+      center/6px 6px;
   /* background: url(img/gif.webp) no-repeat center/cover; */
 }
 
