@@ -14,11 +14,11 @@
 header {
   display: flex;
   font-size: 20px;
-  width: 100%;
+  width: 90%;
   height: 50px;
   position: sticky;
   z-index: 14;
-  top: 0;
+  top: 20;
   backdrop-filter: blur(40px);
 }
 
