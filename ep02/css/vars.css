@@ -122,6 +122,7 @@ bg-white {
 bg-black {
   background-color: black;
   display: flex;
+  position: relative;
 }
 
 @keyframes glitch {

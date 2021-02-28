@@ -4,7 +4,6 @@ css-gallery {
   background: black;
   place-items: center;
   color: white;
-  background: var(--pattern);
   counter-reset: gallery;
 }
 

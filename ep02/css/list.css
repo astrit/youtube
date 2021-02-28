@@ -1,26 +1,27 @@
 stick-list {
   display: flex;
   width: 100%;
+  max-width: 60vw;
+  margin: 0 auto;
   color: white;
-  /* background: black; */
-  backdrop-filter: blur(20px);
   flex-direction: column;
   line-height: 1.38;
   position: relative;
+  margin-bottom: 40vh;
 }
 
 stick-letter {
   font-weight: bold;
-  font-size: 10vw;
+  font-size: var(--base);
+  top: var(--base);
   position: sticky;
-  top: 5vw;
   height: min-content;
-  margin-right: 5vw;
+  margin-right: var(--base);
+  max-width: 2ch;
 }
 
 stick-item {
-  max-width: 1100px;
-  margin: 5vw auto;
+  margin-top: var(--base);
   display: flex;
 }
 
@@ -31,12 +32,16 @@ stick-content {
 
 stick-title {
   font-weight: bold;
-  font-size: 10vw;
+  font-size: var(--base);
 }
 
 stick-text {
   font-size: 2vw;
-  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #b933f9, #5f19dd);
+}
+
+stick-title,
+stick-text {
+  background: var(--gradient-alternate);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(0, 0, 0, 0);
