@@ -4,6 +4,7 @@
 @import "mix.css";
 @import "gallery.css";
 @import "list.css";
+@import "horizontal.css";
 
 header {
   display: flex;
@@ -52,81 +53,4 @@ header {
 }
 .youtube span {
   opacity: 0.4;
-}
-
-/* -- horizontal  */
-
-slide-wrapper {
-  overflow: hidden;
-  height: 100vh;
-  display: flex;
-  position: relative;
-  background: #f2f2f2;
-  color: black;
-  bottom: 0;
-}
-
-horizontal-slide {
-  width: 100vh;
-  height: 100vw;
-  overflow-y: auto;
-  overflow-x: hidden;
-  transform-origin: right top;
-  transform: rotate(-90deg) translate3d(0, -100vh, 0);
-  overflow: overlay;
-  scroll-behavior: smooth;
-}
-
-slide-item {
-  width: max-content;
-  height: calc(100vh - 0px);
-  transform-origin: left top;
-  transform: rotate(90deg) translate3d(0, calc(-100vh + 0px), 0) scaleX(1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: sticky;
-  font-size: calc(var(--base) / 2);
-  font-weight: bold;
-  letter-spacing: -0.1ch;
-}
-
-slide-item img {
-  width: auto;
-  height: 40%;
-}
-
-[s0] {
-  top: 50vh;
-}
-
-[s1] {
-  top: 49vh;
-}
-
-[s2] {
-  top: 95vh;
-}
-
-[s3] {
-  top: 128vh;
-}
-
-[s4] {
-  top: 148vh;
-}
-
-[s8] {
-  background: linear-gradient(to right, transparent, #f2f2f2 40%);
-  margin-top: 10vh;
-  width: 350vh;
-  backdrop-filter: blur(10px);
-}
-
-[s9] {
-  top: 35vw;
-}
-
-horizontal-slide::-webkit-scrollbar {
-  appearance: none;
 }
