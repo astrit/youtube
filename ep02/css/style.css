@@ -77,21 +77,18 @@ horizontal-slide {
   scroll-behavior: smooth;
 }
 
-horizontal-slide::-webkit-scrollbar {
-  appearance: none;
-}
-
 slide-item {
   width: max-content;
-  /* width: calc(100vh - 0px); */
   height: calc(100vh - 0px);
   transform-origin: left top;
-  transform: rotate(90deg) translate3d(0, calc(-100vh + 0px), 0);
+  transform: rotate(90deg) translate3d(0, calc(-100vh + 0px), 0) scaleX(1);
   display: flex;
   align-items: center;
   justify-content: center;
   position: sticky;
   font-size: calc(var(--base) / 2);
+  font-weight: bold;
+  letter-spacing: -0.1ch;
 }
 
 slide-item img {
@@ -101,7 +98,6 @@ slide-item img {
 
 [s0] {
   top: 50vh;
-  /* margin-top: 120vh; */
 }
 
 [s1] {
@@ -122,9 +118,9 @@ slide-item img {
 
 [s8] {
   background: linear-gradient(to right, transparent, #f2f2f2 40%);
-
   margin-top: 10vh;
   width: 350vh;
+  backdrop-filter: blur(10px);
 }
 
 [s9] {
