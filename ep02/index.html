@@ -9,19 +9,25 @@
     <base href="ep02" />
   </head>
   <body>
+    <bg-white>
+      <header>IIIIII</header>
+      <css-pro>
+        <css-title> Mac Pro </css-title>
+        <css-case cursor>
+          <img src="img/zac-pro-case.jpg" alt="Case" />
+        </css-case>
+        <css-inside cursor>
+          <img src="img/zac-pro-inside.png" alt="Case" />
+        </css-inside>
+      </css-pro>
+    </bg-white>
+    <a href="#" class="youtube">
+      <div>
+        Watch @astrit code this!
+        <span>youtube.com/astrit</span>
+      </div>
+    </a>
     <main>
-      <header>test</header>
-      <bg-white>
-        <css-pro>
-          <css-title> Mac Pro </css-title>
-          <css-case cursor>
-            <img src="img/zac-pro-case.jpg" alt="Case" />
-          </css-case>
-          <css-inside cursor>
-            <img src="img/zac-pro-inside.png" alt="Case" />
-          </css-inside>
-        </css-pro>
-      </bg-white>
       <bg-black>
         <css-stripes>
           <css-stripe cursor col1 data-title="css"></css-stripe>
@@ -36,21 +42,20 @@
       <css-gallery>
         <input type="checkbox" wide />
         <gallery-item id="g1" cursor g1>
-          <img src="img/gallery-1.jpeg" />
+          <img loading="lazy" src="img/gallery-1.jpeg" />
         </gallery-item>
         <gallery-item id="g2" cursor g2>
-          <img src="img/smoke.jpeg" />
+          <img loading="lazy" src="img/smoke.jpeg" />
         </gallery-item>
-        <gallery-item id="g3" cursor g3>
+        <!-- <gallery-item id="g3" cursor g3>
           <iframe src="https://astrit.co" frameborder="0"></iframe>
         </gallery-item>
         <gallery-item id="g4" cursor g4>
           <video paused muted loop controls poster="img/sam.jpg">
             <source src="img/video.mp4" type="video/mp4" />
           </video>
-        </gallery-item>
+        </gallery-item> -->
       </css-gallery>
-
       <stick-list>
         <stick-item>
           <stick-letter>01</stick-letter>
@@ -117,9 +122,7 @@
           </stick-content>
         </stick-item>
       </stick-list>
-      <horizontal-stick hidden>
-        this is going to be horizontal
-      </horizontal-stick>
+      <horizontal-stick> this is going to be horizontal </horizontal-stick>
     </main>
   </body>
 </html>

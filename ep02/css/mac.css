@@ -4,7 +4,7 @@ css-pro {
   width: calc(var(--base) * 3);
   padding-bottom: calc(var(--base) * 2);
   grid-gap: var(--base);
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 css-pro img {

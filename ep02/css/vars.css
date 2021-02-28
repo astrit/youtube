@@ -1,6 +1,7 @@
 :root {
   --base: 20vmin;
-  --transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+  --transition: all 0.2s;
+  /* --transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1); */
   /* --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
   --gradient: linear-gradient(-45deg, #ffa63d, #ff3d77, #b933f9, #5f19dd);
   --gradient-alternate: linear-gradient(
@@ -27,6 +28,13 @@
   --cursor-dark-hover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E")
       20 0,
     auto;
+  --youtube: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='82' fill='none'%3E%3Cpath fill='%23fff' d='M25 13h61v49H25z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M100 3c5 1 8 5 10 10 2 9 2 28 2 28s0 19-2 28c-2 5-5 9-10 10-9 3-44 3-44 3s-35 0-43-3c-5-1-9-5-10-10-2-9-2-28-2-28s0-19 2-28C4 8 8 4 13 3c8-3 43-3 43-3s35 0 44 3zM74 41L45 58V24l29 17z' fill='red'/%3E%3C/svg%3E");
+  --pattern-color: rgba(255, 255, 255, 0.1);
+  --pattern: linear-gradient(to bottom, black 50%, transparent) no-repeat fixed
+      center top/auto calc(var(--base) * 2),
+    radial-gradient(var(--pattern-color) 1px, transparent 0) 0 0 / 40px 40px,
+    radial-gradient(var(--pattern-color) 1px, transparent 0) 20px 20px / 40px
+      40px;
 }
 
 body {
@@ -108,6 +116,7 @@ bg-white {
   background-color: white;
   display: flex;
   cursor: var(--cursor) !important;
+  flex-direction: column;
 }
 
 bg-black {

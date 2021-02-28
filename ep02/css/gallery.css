@@ -3,30 +3,22 @@ css-gallery {
   position: relative;
   background: black;
   place-items: center;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 0),
-    radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 0);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
-  background-attachment: fixed;
+  color: white;
+  background: var(--pattern);
   counter-reset: gallery;
-  /* margin-bottom: 20vh; */
 }
 
 gallery-item {
   --scale: 0.6;
   --transform: scale(var(--scale)) rotate(var(--rotate, 0));
   position: sticky;
-  /* aspect-ratio: 1 / 1; */
   display: flex;
   transform: var(--transform);
-
   transition: var(--transition);
   top: 0;
-  /* background-color: black; */
   box-sizing: border-box;
   width: 100vmin;
   height: 100vmin;
-  pointer-events: none;
   justify-content: center;
   --radius: calc(var(--base) / 5);
   margin-bottom: 10vh;
@@ -39,11 +31,11 @@ gallery-item > * {
   border-radius: var(--radius);
   width: 100%;
   height: 100%;
-  box-shadow: 60px 0 180px 5px black;
+  box-shadow: 60px 0 180px 5px black, 0 -100px 280px black;
+  transition: var(--transition);
 }
 
-gallery-item:hover,
-[wide]:checked ~ gallery-item:not(:hover) {
+[wide]:checked ~ gallery-item {
   --scale: 1;
   --rotate: 0;
   --radius: 10px;
@@ -54,31 +46,13 @@ gallery-item:hover,
   object-fit: cover;
   height: 80vmin;
 }
-gallery-item:hover > *,
-[wide]:checked ~ gallery-item:not(:hover) > * {
+[wide]:checked ~ gallery-item > * {
   aspect-ratio: 16 / 9 !important;
 }
 
 [wide]:checked ~ gallery-item:after {
   top: calc(var(--nr-top) + 10vmin);
 }
-/* gallery-item:hover:after {
-  position: absolute;
-  top: unset;
-  bottom: 10vh;
-  right: 10vh;
-  pointer-events: none;
-  transform: rotate(0);
-} */
-
-/* [wide]:checked ~ gallery-item:after {
-  transform: translateX(-2ch);
-} */
-
-/* gallery-item:hover > * {
-  aspect-ratio: 16 / 9;
-  display: block;
-} */
 
 gallery-item:after {
   content: "0" counter(gallery) " ";
@@ -93,7 +67,6 @@ gallery-item:after {
   font-size: calc(var(--base) / 4);
   position: sticky;
   top: var(--nr-top);
-  /* margin-bottom: 10ch; */
   margin-top: 5vh;
   margin-bottom: 20vh;
   counter-increment: gallery;
@@ -102,57 +75,6 @@ gallery-item:after {
   z-index: 10;
   transition: var(--transition);
 }
-
-gallery-item:before {
-  content: "";
-  color: white;
-  display: flex;
-  width: 220px;
-  height: 220px;
-  z-index: 10;
-  pointer-events: initial;
-  position: absolute;
-  font-size: var(--base);
-  top: 60px;
-  left: 60px;
-  background: white;
-}
-
-/* [wide]:checked ~ gallery-item:before, */
-gallery-item:hover:before {
-  width: 100vw;
-  height: 100vh;
-  background: none;
-  backdrop-filter: none;
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-gallery-item input {
-  z-index: 100;
-  display: flex;
-  position: absolute;
-}
-
-/* gallery-item:hover ~ gallery-item:after {
-  content: "";
-  display: flex;
-  position: absolute;
-  width: 120vw;
-  height: 100%;
-  border-radius: 0;
-  backdrop-filter: blur(30px) grayscale(100);
-  background: linear-gradient(to bottom, transparent, black 90%);
-  top: 0;
-  left: 0;
-  z-index: 10;
-} */
-
-/* gallery-item:hover > * {
-  box-shadow: 0 0 400px 200px black;
-} */
 
 [g1] {
   --rotate: -4deg;
@@ -187,24 +109,23 @@ css-gallery::after {
 [wide] {
   display: flex;
   position: sticky;
-  top: 80%;
-  right: 10%;
+  top: calc(100% - 90px);
+  right: 80px;
   z-index: 100;
-  /* bottom: 0; */
-  background: teal;
-  width: 200px;
-  height: 200px;
+  outline: none;
+  width: 40px;
+  height: 40px;
   justify-self: right;
+  appearance: none;
+  cursor: var(--cursor-dark-hover);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M3 3H9V5H5V9H3V3Z' /%3E%3Cpath d='M3 21H9V19H5V15H3V21Z' /%3E%3Cpath d='M15 21H21V15H19V19H15V21Z' /%3E%3Cpath d='M21 3H15V5H19V9H21V3Z' /%3E%3C/svg%3E")
+    no-repeat center/24px;
 }
 
 [wide]:checked {
   z-index: 100;
 }
 
-[wide]:checked ~ gallery-item:before {
-  display: none;
-}
-
 [wide]:checked ~ gallery-item {
-  pointer-events: initial;
+  margin-bottom: 80vh;
 }
