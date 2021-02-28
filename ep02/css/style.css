@@ -15,12 +15,12 @@ header {
   position: sticky;
   z-index: 140;
   top: 0;
-  color: white;
+  color: black;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   padding: 0 40px;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 }
 
 .youtube {
@@ -34,7 +34,7 @@ header {
   margin-top: -120px;
   margin-bottom: 60px;
   left: 40px;
-  color: white;
+
   font-size: 12px;
   letter-spacing: 0;
   text-decoration: none;
@@ -49,7 +49,8 @@ header {
 .youtube div {
   display: flex;
   flex-direction: column;
-  mix-blend-mode: difference;
+  color: white;
+  filter: grayscale(1) contrast(0);
 }
 .youtube span {
   opacity: 0.4;

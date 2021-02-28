@@ -100,10 +100,6 @@ body {
   cursor: var(--cursor-dark);
 }
 
-[white] {
-  background-color: black;
-}
-
 [cursor]:hover {
   cursor: var(--cursor-dark-hover);
 }
@@ -113,10 +109,11 @@ bg-white [cursor]:hover {
 }
 
 bg-white {
-  background-color: white;
+  background: linear-gradient(to bottom, white, white);
   display: flex;
   cursor: var(--cursor) !important;
   flex-direction: column;
+  width: 100%;
 }
 
 bg-black {
