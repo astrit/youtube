@@ -1,6 +1,7 @@
 :root {
   --base: 20vmin;
   --transition: all 0.2s;
+  --cubic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   /* --transition: all 0.4s cubic-bezier(0.83, 0, 0.17, 1); */
   /* --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
   --gradient: linear-gradient(-45deg, #ffa63d, #ff3d77, #b933f9, #5f19dd);
