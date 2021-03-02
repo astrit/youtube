@@ -34,15 +34,10 @@ header {
   margin-top: 40px;
   left: 80px;
   font-size: 20px;
-  letter-spacing: 0;
-  text-decoration: none;
-  line-height-step: 1;
   align-items: center;
   flex-direction: column;
-  align-items: flex-start;
-  z-index: 200;
+  z-index: 20;
   font-family: "Caveat", sans-serif;
-
 }
 
 .youtube svg {
@@ -56,12 +51,13 @@ header {
 
 .youtube:before {
   content: "";
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='31' height='34' fill='none'%3E%3Cpath d='M30 9S12 8 4 25' stroke='%23000' stroke-miterlimit='10'/%3E%3Cpath d='M9 24v-1l-5 2-1-5H2l2 6 5-2z' fill='%23000'/%3E%3C/svg%3E") no-repeat center/contain;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='31' height='34' fill='none'%3E%3Cpath d='M30 9S12 8 4 25' stroke='gray' stroke-miterlimit='10'/%3E%3Cpath d='M9 24v-1l-5 2-1-5H2l2 6 5-2z' fill='gray'/%3E%3C/svg%3E") no-repeat center/contain;
   width: 36px;
   height: 39px;
   transition: all .4s var(--cubic);
   margin-left: 20px;
   transform-origin: 36px 39px;
+
 }
 
 .youtube:hover:before {
@@ -70,12 +66,11 @@ header {
 
 .youtube span {
   position: absolute;
-  mix-blend-mode: difference;
   color: white;
   width: 10ch;
   left: 8ch;
   top: -2ex;
-  color: black;
+  color: gray;
   transition: all .4s var(--cubic);
   font-weight: normal;
   transform-origin: 10ch 2ex;

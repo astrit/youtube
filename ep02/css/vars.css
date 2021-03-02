@@ -2,7 +2,6 @@
 	--base: 20vmin;
 	--transition: all 0.2s;
 	--cubic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-	/* all .3s cubic-bezier(.175,.885,.32,1.275) */
 	--gradient: linear-gradient(-45deg, #ffa63d, #ff3d77, #b933f9, #5f19dd);
 	--gradient-alternate: linear-gradient(to bottom, #ffa63d, #ff3d77, #b933f9, #5f19dd, rgb(98 212 33 / 0%) 100%);
 	--scroll-negative: black;
@@ -11,10 +10,10 @@
 	--cursor-hover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E") 20 0, auto;
 	--cursor-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='white'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E") 20 0, auto;
 	--cursor-dark-hover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E") 20 0, auto;
-	/* --youtube: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='82' fill='none'%3E%3Cpath fill='%23fff' d='M25 13h61v49H25z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M100 3c5 1 8 5 10 10 2 9 2 28 2 28s0 19-2 28c-2 5-5 9-10 10-9 3-44 3-44 3s-35 0-43-3c-5-1-9-5-10-10-2-9-2-28-2-28s0-19 2-28C4 8 8 4 13 3c8-3 43-3 43-3s35 0 44 3zM74 41L45 58V24l29 17z' fill='red'/%3E%3C/svg%3E"); */
 	--pattern-color: rgba(255, 255, 255, 0.1);
 	--pattern: linear-gradient(to bottom, black 50%, transparent) no-repeat fixed center top/auto calc(var(--base) * 2), radial-gradient(var(--pattern-color) 1px, transparent 0) 0 0 / 40px 40px, radial-gradient(var(--pattern-color) 1px, transparent 0) 20px 20px / 40px 40px;
   --scroll-color: rgba(255, 255, 255, 0.1);
+	--scroll-design: radial-gradient(farthest-side, transparent calc(90% - 6px), var(--scroll-negative), transparent, var(--scroll-positive), transparent) no-repeat center / 20px 20px, linear-gradient(to bottom, transparent, var(--scroll-color) 4px) no-repeat center / 4px 120%, radial-gradient(farthest-side, transparent calc(90% - 2px), var(--scroll-color), transparent) no-repeat center/40px 40px, radial-gradient(farthest-side, white calc(90% - 12px), transparent) no-repeat center/6px 6px;
 }
 
 body {
@@ -42,7 +41,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-	background: radial-gradient(farthest-side, transparent calc(90% - 6px), var(--scroll-negative), transparent, var(--scroll-positive), transparent) no-repeat center / 20px 20px, linear-gradient(to bottom, transparent, var(--color) 4px) no-repeat center / 4px 120%, radial-gradient(farthest-side, transparent calc(90% - 2px), var(--scroll-color), transparent) no-repeat center/40px 40px, radial-gradient(farthest-side, white calc(90% - 12px), transparent) no-repeat center/6px 6px;
+	background: var(--scroll-design);
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -66,7 +65,7 @@ bg-white[cursor]:hover {
 }
 
 bg-white {
-	background: linear-gradient(to bottom, white, white);
+	background: white;
 	display: flex;
 	cursor: var(--cursor) !important;
 	flex-direction: column;
@@ -80,41 +79,18 @@ bg-black {
 }
 
 @keyframes glitch {
-	0% { opacity: 1; clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%) }
-	2% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%) }
-	4% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%) }
-	6% { clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
-	}
-	8% {
-		clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
-	}
-	10% {
-		clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
-	}
-	12% {
-		clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
-	}
-	14% {
-		clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
-	}
-	16% {
-		clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
-	}
-	18% {
-		clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
-	}
-	20% {
-		clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
-	}
-	21.9% {
-		clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
-	}
-	28% {
-		opacity: 1;
-	}
-	82%,
-	100% {
-		opacity: 0;
-		clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-	}
+	0%  				{ clip-path: polygon(	0 2%, 100% 2%, 100% 5%, 0 5%); opacity: 1	}
+	2%  				{ clip-path: polygon(	0 15%, 100% 15%, 100% 15%, 0 15%) 				}
+	4%  				{ clip-path: polygon(	0 10%, 100% 10%, 100% 20%, 0 20%) 				}
+	6%  				{ clip-path: polygon(	0 1%, 100% 1%, 100% 2%, 0 2%) 						}
+	8%  				{ clip-path: polygon(	0 33%, 100% 33%, 100% 33%, 0 33%)					}
+	10% 				{ clip-path: polygon(	0 44%, 100% 44%, 100% 44%, 0 44%)					}
+	12% 				{ clip-path: polygon(	0 50%, 100% 50%, 100% 20%, 0 20%)					}
+	14% 				{ clip-path: polygon(	0 70%, 100% 70%, 100% 70%, 0 70%)					}
+	16% 				{ clip-path: polygon(	0 80%, 100% 80%, 100% 80%, 0 80%)					}
+	18% 				{ clip-path: polygon(	0 50%, 100% 50%, 100% 55%, 0 55%)					}
+	20% 				{ clip-path: polygon(	0 70%, 100% 70%, 100% 80%, 0 80%)					}
+	21.9% 			{ clip-path: polygon(	0 50%, 100% 50%, 100% 55%, 0 55%)					}
+	28% 				{ opacity: 1 																										}
+	82%, 100% 	{ clip-path: polygon( 0 0, 0 0, 0 0, 0 0); opacity: 0						}
 }
