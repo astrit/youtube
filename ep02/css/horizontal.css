@@ -16,17 +16,15 @@ horizontal-slide {
   transform-origin: right top;
   transform: rotate(-90deg) translate3d(0, -100vh, 0);
   overflow: overlay;
-  scroll-behavior: smooth;
 }
 
 slide-item {
   width: max-content;
-  height: calc(100vh - 0px);
+  height: 100vh;
   transform-origin: left top;
-  transform: rotate(90deg) translate3d(0, calc(-100vh + 0px), 0) scaleX(1);
+  transform: rotate(90deg) translate3d(0, -100vh, 0) scaleX(1);
   display: flex;
   align-items: center;
-  justify-content: center;
   position: sticky;
   font-size: calc(var(--base) / 2);
   font-weight: bold;
@@ -34,40 +32,24 @@ slide-item {
 }
 
 slide-item img {
-  width: auto;
-  height: 40%;
+  height: 40vmin;
 }
 
-[s0] {
-  top: 50vh;
-}
+[s0] { top: 50vh }
+[s1] { top: 49vh }
+[s2] { top: 95vh }
+[s3] { top: 128vh }
+[s4] { top: 148vh }
+[s6] { top: 35vw }
 
-[s1] {
-  top: 49vh;
-}
-
-[s2] {
-  top: 95vh;
-}
-
-[s3] {
-  top: 128vh;
-}
-
-[s4] {
-  top: 148vh;
-}
-
-[s8] {
+[s5] {
   background: linear-gradient(to right, transparent, #f2f2f2 40%);
   margin-top: 10vh;
   width: 350vh;
   backdrop-filter: blur(10px);
 }
 
-[s9] {
-  top: 35vw;
-}
+
 
 horizontal-slide::-webkit-scrollbar {
   appearance: none;

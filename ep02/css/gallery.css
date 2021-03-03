@@ -45,6 +45,7 @@ gallery-item > * {
   object-fit: cover;
   height: 80vmin;
 }
+
 [wide]:checked ~ gallery-item > * {
   aspect-ratio: 16 / 9 !important;
 }
