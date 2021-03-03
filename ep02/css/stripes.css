@@ -10,8 +10,7 @@ css-stripes {
 }
 
 css-stripe {
-  background: url(../img/stripe-portrait.jpeg) no-repeat fixed
-    center/var(--width);
+  background: url(../img/stripe-portrait.jpeg) no-repeat fixed center/var(--width);
   transform: scale(0.9) skewX(-10deg);
   position: sticky;
   height: calc(var(--base) * 5);

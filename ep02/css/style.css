@@ -1,5 +1,5 @@
 @import "vars.css";
-/* @import "preload.css"; */
+@import "preload.css";
 @import "mac.css";
 @import "stripes.css";
 @import "mix.css";
