@@ -60,14 +60,18 @@ body {
 	cursor: var(--cursor-dark-hover);
 }
 
-bg-white[cursor]:hover {
+bg-white [cursor] {
+	cursor: var(--cursor);
+}
+
+bg-white [cursor]:hover {
 	cursor: var(--cursor-hover);
 }
 
 bg-white {
 	background: white;
 	display: flex;
-	cursor: var(--cursor) !important;
+	cursor: var(--cursor);
 	flex-direction: column;
 	width: 100%;
 }
