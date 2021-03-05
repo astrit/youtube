@@ -1,5 +1,4 @@
 css-pro {
-  background: white;
   display: grid;
   width: calc(var(--base) * 3);
   padding-bottom: calc(var(--base) * 2);
