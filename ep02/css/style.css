@@ -1,5 +1,5 @@
 @import "vars.css";
-/* @import "preload.css"; */
+@import "preload.css";
 @import "mac.css";
 @import "stripes.css";
 @import "mix.css";
@@ -8,68 +8,63 @@
 @import "horizontal.css";
 
 
-header {
-  display: flex;
-  font-size: 20px;
-  height: 100px;
-  position: sticky;
-  top: 0;
-  align-items: center;
-  padding: 0 40px;
+body {
+	background-color: black;
+	margin: 0;
+	font-family: sans-serif;
+	letter-spacing: -0.1ch;
+	line-height: 1;
+	overflow: overlay;
 }
 
-.youtube {
-  display: flex;
-  width: min-content;
-  height: min-content;
-  position: sticky;
-  top: 40px;
-  bottom: 60px;
-  margin-top: 40px;
-  left: 80px;
-  font-size: 20px;
-  align-items: center;
-  flex-direction: column;
-  z-index: 20;
-  font-family: "Caveat", sans-serif;
+body::-webkit-scrollbar-track {
+	pointer-events: none;
+	background: linear-gradient(to bottom, transparent, var(--scroll-color) 1px) no-repeat center / 1px 90%;
 }
 
-.youtube svg {
-  width: 40px;
-  transition: all .4s var(--cubic);
+body::-webkit-scrollbar {
+	width: 100px;
+	height: 100%;
 }
 
-.youtube:hover svg {
-  transform: scale(1.1);
+body::-webkit-scrollbar-thumb {
+	background: var(--scroll-design);
 }
 
-.youtube:before {
-  content: "";
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='31' height='34' fill='none'%3E%3Cpath d='M30 9S12 8 4 25' stroke='gray' stroke-miterlimit='10'/%3E%3Cpath d='M9 24v-1l-5 2-1-5H2l2 6 5-2z' fill='gray'/%3E%3C/svg%3E") no-repeat center/contain;
-  width: 36px;
-  height: 39px;
-  transition: all .4s var(--cubic);
-  margin-left: 20px;
-  transform-origin: 36px 39px;
+body::-webkit-scrollbar-thumb:hover {
+	--color: red;
 }
 
-.youtube:hover:before {
-  transform: rotate(-15deg);
+[hidden] {
+	display: none;
 }
 
-.youtube span {
-  position: absolute;
-  color: white;
-  width: 10ch;
-  left: 8ch;
-  top: -2ex;
-  color: gray;
-  transition: all .4s var(--cubic);
-  font-weight: normal;
-  transform-origin: 10ch 2ex;
+body {
+	cursor: var(--cursor-dark);
 }
 
+[cursor]:hover {
+	cursor: var(--cursor-dark-hover);
+}
 
-.youtube:hover span {
-  transform: scale(1.1);
+bg-white [cursor] {
+	cursor: var(--cursor);
+}
+
+bg-white [cursor]:hover {
+	cursor: var(--cursor-hover);
+}
+
+bg-white {
+	background: white;
+	display: flex;
+	cursor: var(--cursor);
+	flex-direction: column;
+	width: 100%;
+}
+
+bg-black {
+	background-color: black;
+	display: flex;
+	position: relative;
 }

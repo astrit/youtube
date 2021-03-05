@@ -1,3 +1,13 @@
+header {
+  display: flex;
+  font-size: 20px;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  padding: 0 40px;
+}
+
 css-pro {
   display: grid;
   width: calc(var(--base) * 3);
