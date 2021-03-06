@@ -49,8 +49,6 @@ slide-item img {
   backdrop-filter: blur(10px);
 }
 
-
-
 horizontal-slide::-webkit-scrollbar {
   appearance: none;
 }
